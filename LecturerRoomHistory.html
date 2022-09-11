@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/SpaceRoomHistory.css" />
+    <link rel="stylesheet" href="css/bar.css" />
+
+    <title>Lecturer Room Booking History</title>
+
+    <body>
+      <script src="js/SpaceRoomHistory.js"></script>
+      <div
+        class="blur-image"
+        style="
+          background: url(img/lecture\ hall.jpg) no-repeat center center fixed;
+          background-size: cover;
+        "
+      ></div>
+      <header>
+        <span class="image-clickable">
+          <a href="SpaceDashNew.html">
+            <img src="img/round-table.png" alt="main-logo" class="logo" />
+            <h2>Space Booking<br />Management System</h2>
+          </a>
+        </span>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="LecturerLogin.html">Logout</a></li>
+            <li><a href="roomselection.html">Book a Space</a></li>
+            <li><a href="LecturerRoomHistory.html">Room Booking History</a></li>
+            <li><a href="LectRoomResult.html">Room Booking Result</a></li>
+          </ul>
+        </nav>
+        <a href="LectDashNew.html"><button>Profile</button></a>
+      </header>
+
+      <div class="container">
+        <div class="box">
+          <div class="text">
+            <i
+              >The list of booking history displayed is only a mockup.<br />
+              Page functionality will be updated for assignment 2.</i
+            ><br />
+            <h1>Room History Booking</h1>
+            <br />
+            *Click any header to sort
+          </div>
+          <table class="styled-table" id="room-sort">
+            <thead>
+              <tr class="header">
+                <th>No.</th>
+                <th onclick="sortTable(0)">Room type</th>
+                <th onclick="sortTable(1)">Room code</th>
+                <th onclick="sortTable(2)">Time</th>
+                <th onclick="sortTable(3)">Date of Booking</th>
+              </tr>
+            </thead>
+
+            <tbody align="center">
+              <tr>
+                <td>1.</td>
+                <td>Hall Room</td>
+                <td>HR2</td>
+                <td>1700 - 1800 HRS</td>
+                <td>04/06/2022</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Meeting Room</td>
+                <td>MR3</td>
+                <td>0800 - 1100 HRS</td>
+                <td>05/06/2022</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Computer Lab</td>
+                <td>LAB1</td>
+                <td>9000 - 1100 HRS</td>
+                <td>27/06/2022</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="button">
+            <input type="button" value="Print" onclick="window.print()" />
+          </div>
+        </div>
+      </div>
+    </body>
+  </head>
+</html>

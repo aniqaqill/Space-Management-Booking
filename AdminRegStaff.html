@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/booking.css" />
+    <link rel="stylesheet" href="css/bar.css" />
+    <title>Register Staff</title>
+  </head>
+
+  <body>
+    <header>
+      <span class="image-clickable">
+        <a href="AdminDash.html">
+          <img src="img/round-table.png" alt="main-logo" class="logo" />
+          <h2>Space Booking<br />Management System</h2>
+        </a>
+      </span>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="AdminLogin.html">Logout</a></li>
+          <li><a href="AdminRegStaff.html">Register New Staff</a></li>
+          <li><a href="AdminRoomSelection.html">Book a Space</a></li>
+          <li><a href="AdminRoomBookHistory.html">Room Booking History</a></li>
+        </ul>
+      </nav>
+      <a href="AdminDash.html"><button>Return to admin dashboard</button></a>
+    </header>
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <br /><br />
+    <div class="staffReg">
+      <table>
+        <form>
+          <tr>
+            <th>Full Name:</th>
+            <td><input type="text" name="FName" size="" /></td>
+          </tr>
+          <tr>
+            <th>NRIC:</th>
+            <td><input type="text" name="IC" size="" /></td>
+          </tr>
+
+          <tr>
+            <th>Email:</th>
+            <td><input type="text" name="Email" size="" /></td>
+          </tr>
+          <tr>
+            <th>Contact Number:</th>
+            <td><input type="text" name="ContactNo" size="" /></td>
+          </tr>
+
+          <tr>
+            <th>Address:</th>
+            <td>
+              <input type="text" name="Add1" placeholder="Address Line 1" />
+              <input type="text" name="Add2" placeholder="Address Line 2" />
+              <input type="text" name="City" placeholder="City" /><input
+                type="text"
+                name="State"
+                placeholder="State"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <th>Position:</th>
+            <td><input type="text" name="Edate" /></td>
+          </tr>
+          <tr>
+            <th>Department:</th>
+            <td><input type="text" name="TOWork" /></td>
+          </tr>
+
+          <th align="right" colspan="2">
+            <input name="Submit" type="submit" value="Submit" />
+            <input name="Reset" type="reset" value="Reset" />
+          </th>
+        </form>
+      </table>
+    </div>
+  </body>
+</html>

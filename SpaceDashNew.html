@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/dashboardProfile.css" />
+  <link rel="stylesheet" href="css/bar.css"/>
+  <script src="js/dash.js"></script>
+  <title>Space Manager Profile</title>
+</head>
+
+<body>
+    <div
+      class="image"
+      style="
+        background: url(img/background.jpg) no-repeat center center fixed;
+        background-size: cover;
+      "
+    ></div>
+    <header>
+        <span class="image-clickable">
+          <a href="roomselection.html">
+            <img src="img/round-table.png" alt="main-logo" class="logo" />
+            <h2>Space Booking<br />Management System</h2>
+          </a>
+        </span>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="SpaceManagerLogin.html">Logout</a></li>
+            <li><a href="SpaceAppList.html">Space Request List</a></li>
+            <li><a href="SpaceRoomHistory.html">Space Room Booking History</a></li>
+          </ul>
+        </nav>
+        <a href="LectDashNew.html"><button class="profile">Profile</button></a>
+    </header>
+
+    
+    <div class="container">
+        <div class="box">
+            <h1>Space Manager Profile</h1>
+            <div id="propic">
+                <img src="img/spacepfp.jpeg">
+                <a href="directories">
+                  <h4>Change picture</h4>
+                </a>
+            </div>
+
+            <div class="pro-container">
+                <div class="profile-container">
+                  <h4 class="name">Ahmad Faruq bin Azlan</h4>
+                  <div class="lectid">S789445</div>
+                  <div class="position">UTM Space Manager</div>
+                  <div class="pnum">014-5674566</div>
+                  <div class="email"><a href="mailto:ahmadfaruq@example.com">ahmadfaruq@example.com</a></div>
+                  <div class="fax">555-123-4567</div>
+                  <div class="office">34-55-12, M28</div>
+                </div>
+            </div>
+
+            <form class="edit-container">
+                <table class="user-pass-edit">
+                  <tr class="header-credentials">
+                    <td>
+                      Username
+                    </td>
+                    <td>
+                      Password
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" id="username" value="" placeholder="faruqcute30">
+                    </td>
+                    <td>
+                      <input type="password" id="password" value="" placeholder="Update password here">
+                    </td>
+                  </tr>
+                  <tr >
+                    <td colspan="2" class="message">
+                      <i>Note: password <b>MUST</b> consists at least 6 characters and 1 number.</i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="edit">
+                      <input type="button" value="Update Details" id="edit" onclick="validatePassword(document.getElementById('password'))">
+                    </td>
+                  </tr>
+                </table>
+              </form>
+        </div>
+    </div>
+    
+
+</body>
