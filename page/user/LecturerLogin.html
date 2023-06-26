@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Space Booking Management System</title>
+    <link rel="stylesheet" href="../../css/login.css" />
+    <script src="Login.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box">
+        <form
+          class="form_login"
+          onsubmit="return formValidator()"
+          action="../lecture/dashboard/LectDashNew.html"
+        >
+          <img class="icon" src="../../img/round-table.png" />
+          <h2>Space Booking<br />Management System</h2>
+          <h3><<< Lecturer Mode >>></h3>
+          <div class="login">
+            <label for="username"><b>Username</b></label>
+            <input
+              class="user"
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              required
+            />
+
+            <label for="password"><b>Password</b></label>
+            <input
+              class="pwd"
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              required
+            />
+
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </label>
+
+            <button class="submit" type="submit">Login</button>
+          </div>
+
+          <div>
+            <span class="forgot"><a href="#">Forgot the password?</a></span>
+          </div>
+        </form>
+        <div class="return">
+          <a href="../../index.html"><button>Return to Main Menu</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

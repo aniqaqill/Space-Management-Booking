@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../css/SpaceAppList.css" />
+    <link rel="stylesheet" href="../../../css/roombookingresult.css" />
+
+    <title>Room Booking Result</title>
+
+    <body>
+      <script src="SpaceRoomHistory.js"></script>
+
+      <div class="blur-image"></div>
+      <header>
+        <span class="image-clickable">
+          <a href="../dashboard/LectDashNew.html">
+            <img
+              src="../../../img/round-table.png"
+              alt="main-logo"
+              class="logo"
+            />
+            <h2>Space Booking<br />Management System</h2>
+          </a>
+        </span>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../../user/LecturerLogin.html">Logout</a></li>
+            <li><a href="../room/roomselection.html">Book a Space</a></li>
+            <li>
+              <a href="../history/LecturerRoomHistory.html"
+                >Room Booking History</a
+              >
+            </li>
+            <li>
+              <a href="../result/LectRoomResult.html">Room Booking Result</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="../dashboard/LectDashNew.html"
+          ><button class="profile">Profile</button></a
+        >
+      </header>
+
+      <div class="container">
+        <div class="box">
+          <div class="text">
+            <i
+              >The list of request displayed is only a rough display.<br />
+              Page functionality will be updated soon.</i
+            ><br />
+            <h1>Room Booking Result</h1>
+            <br />
+            *Click any header to sort
+          </div>
+          <table class="styled-table" id="room-sort">
+            <thead>
+              <tr class="header">
+                <th>No.</th>
+                <th onclick="sortTable(0)">Room Type</th>
+                <th onclick="sortTable(1)">Room Code</th>
+                <th onclick="sortTable(2)">Time & Date</th>
+                <th>Room Booking Result</th>
+              </tr>
+            </thead>
+
+            <tbody align="center">
+              <tr>
+                <td>1.</td>
+                <td>Hall Room</td>
+                <td>HR2</td>
+                <td>1400 - 1600 HRS<br />17/06/2022</td>
+                <td>
+                  <div id="accept">Accept</div>
+                </td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Meeting Room</td>
+                <td>MR1</td>
+                <td>1000 - 1300 HRS<br />23/06/2022</td>
+                <td>
+                  <div id="reject">Reject</div>
+                </td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Computer Lab</td>
+                <td>LAB3</td>
+                <td>9000 - 1100 HRS<br />01/07/2022</td>
+                <td>
+                  <div id="accept">Accept</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="button">
+            <input type="button" value="Print" onclick="window.print()" />
+          </div>
+        </div>
+      </div>
+    </body>
+  </head>
+</html>

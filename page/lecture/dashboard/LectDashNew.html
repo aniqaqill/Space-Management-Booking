@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../css/dashboardProfile.css" />
+    <link rel="stylesheet" href="../../../css/bar.css" />
+    <script src="dash.js"></script>
+    <title>Lecturer Dashboard</title>
+  </head>
+
+  <body>
+    <div
+      class="image"
+      style="
+        background-image: url(../../../img/background.jpg);
+        background-size: cover;
+      "
+    ></div>
+
+    <header>
+      <span class="image-clickable">
+        <a href="../dashboard/LectDashNew.html">
+          <img
+            src="../../../img/round-table.png"
+            alt="main-logo"
+            class="logo"
+          />
+          <h2>Space Booking<br />Management System</h2>
+        </a>
+      </span>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../user/LecturerLogin.html">Logout</a></li>
+          <li><a href="../room/roomselection.html">Book a Space</a></li>
+          <li>
+            <a href="../history/LecturerRoomHistory.html"
+              >Room Booking History</a
+            >
+          </li>
+          <li>
+            <a href="../result/LectRoomResult.html">Room Booking Result</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="../dashboard/LectDashNew.html"
+        ><button class="profile">Profile</button></a
+      >
+    </header>
+
+    <div class="container">
+      <div class="box">
+        <h1>Lecturer Profile</h1>
+        <div id="propic">
+          <img src="../../../img/lectpfp.jpeg" />
+          <a href="directories">
+            <h4>Change picture</h4>
+          </a>
+        </div>
+
+        <div class="pro-container">
+          <div class="profile-container">
+            <h4 class="name">Gloria Lucy anak Engkasan</h4>
+            <div class="lectid">L200456</div>
+            <div class="position">
+              UTM Lecturer, Faculty of Computer Science
+            </div>
+            <div class="pnum">014-5674566</div>
+            <div class="email">
+              <a href="mailto:glorialucy@example.com">glorialucy@example.com</a>
+            </div>
+            <div class="fax">555-123-4567</div>
+            <div class="office">03-31-05, N28a</div>
+          </div>
+        </div>
+
+        <form class="edit-container">
+          <table class="user-pass-edit">
+            <tr class="header-credentials">
+              <td>Username</td>
+              <td>Password</td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  id="username"
+                  value=""
+                  placeholder="glorialucy09"
+                />
+              </td>
+              <td>
+                <input
+                  type="password"
+                  id="password"
+                  value=""
+                  placeholder="Update password here"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="message">
+                <i
+                  >Note: password <b>MUST</b> consists at least 6 characters and
+                  1 number.</i
+                >
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="edit">
+                <input
+                  type="button"
+                  value="Update Details"
+                  id="edit"
+                  onclick="validatePassword(document.getElementById('password'))"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

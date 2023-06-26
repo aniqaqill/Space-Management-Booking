@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../../css/booking.css" />
+    <link rel="stylesheet" href="../../../css/bar.css" />
+    <title>Lab Room Booking</title>
+  </head>
+
+  <body>
+    <div
+      class="blur-image"
+      style="
+        background: url(../../../img/lab.jpeg) no-repeat center center fixed;
+        background-size: cover;
+      "
+    ></div>
+    <header>
+      <span class="image-clickable">
+        <a href="../roomselection/AdminRoomSelection.html">
+          <img
+            src="../../../img/round-table.png"
+            alt="main-logo"
+            class="logo"
+          />
+          <h2>Space Booking<br />Management System</h2>
+        </a>
+      </span>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../user/AdminLogin.html">Logout</a></li>
+          <li>
+            <a href="../regstaff/AdminRegStaff.html">Register New Staff</a>
+          </li>
+          <li>
+            <a href="../roomselection/AdminRoomSelection.html">Book a Space</a>
+          </li>
+          <li>
+            <a href="../bookhistory/AdminRoomBookHistory.html"
+              >Room Booking History</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <a href="../dashboard/AdminDash.html"
+        ><button>Return to admin dashboard</button></a
+      >
+    </header>
+    <div class="container">
+      <div class="box">
+        <form autocomplete="on" class="labform">
+          [ADMIN MODE] <br />
+          <h1>LAB ROOM</h1>
+          <br />
+
+          <div class="block">
+            <label for="block"> <h4>Select Block:</h4> </label><br />
+            <select name="sblock" id="selectblock">
+              <option value="N28">N28</option>
+              <option value="N28a">N28a</option>
+            </select>
+          </div>
+
+          <div class="autocomplete" style="width: 300px">
+            <label for="room"> <h4>Select Room:</h4> </label><br />
+            <input
+              id="myInput"
+              type="text"
+              name="room"
+              placeholder="Search Room"
+            />
+          </div>
+
+          <div class="date">
+            <label for="Sdate"> <h4>Select Date:</h4> </label><br />
+            <input type="date" id="Sdate" name="meet_date" value="" />
+          </div>
+
+          <div class="time">
+            <label for="Stime"> <h4>Select Time:</h4> </label><br />
+            <input type="time" id="Stime" name="meet_time_start" />
+            <h5>until</h5>
+            <input type="time" id="Etime" name="meet_time_end" />
+          </div>
+
+          <br />
+          <br />
+          <br />
+          <div class="submit">
+            <input type="submit" />
+            <a href="../roomselection/AdminRoomSelection.html">
+              <h3>cancel</h3>
+            </a>
+          </div>
+        </form>
+        <script src="labbooking.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
