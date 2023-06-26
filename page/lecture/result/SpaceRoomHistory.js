@@ -52,3 +52,47 @@ function sortTable(n) {
       }
     }
   }
+
+$(document).ready(function() {
+      $("#searchForm").submit(function(event) {
+        event.preventDefault();
+
+        var phoneNumber = $("#phone").val();
+
+        $.get("http://localhost:5000/applications/history/" + phoneNumber, function(response) {
+          populateTable(response);
+        })
+        .fail(function(error) {
+          console.error("Error:", error);
+        });
+      });
+
+      function populateTable(data) {
+        var tableBody = $("#tableBody");
+        tableBody.empty();
+
+        // Iterate through the data and create table rows
+        data.forEach(function(application, index) {
+          var row = $("<tr></tr>");
+
+          var no = $("<td></td>").text(index + 1);
+          var roomType = $("<td></td>").text(application.room.type);
+          var roomCode = $("<td></td>").text(application.room.name);
+          var timeDate = $("<td></td>").text(application.time.from + " - " + application.time.to + " HRS\n" + formatDate(application.date));
+          var roomResult = $("<td></td>").text(application.status);
+
+          row.append(no, roomType, roomCode, timeDate, roomResult);
+          tableBody.append(row);
+        });
+      }
+
+      function formatDate(dateString) {
+        var date = new Date(dateString);
+        var formattedDate = date.toLocaleDateString("en-US", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        });
+        return formattedDate;
+      }
+    });
