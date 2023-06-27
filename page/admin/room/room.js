@@ -36,7 +36,7 @@ $(document).ready(function () {
   });
 
   // Handle add room button
-  $("#addRoom").click(function (event) {
+  $("#addRoom").submit(function (event) {
     event.preventDefault();
     var roomName = $("#inputRoomName").val();
     var roomType = $("#inputRoomType").val();

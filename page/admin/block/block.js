@@ -23,7 +23,7 @@ $(document).ready(function () {
   });
 
   // Handle add block button
-  $("#addBlock").click(function (event) {
+  $("#addBlock").submit(function (event) {
     event.preventDefault();
     var blockName = $("#inputBlock").val();
     if (blockName) {
