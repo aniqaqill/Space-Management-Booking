@@ -96,6 +96,12 @@ $(document).ready(function () {
       type: "PATCH",
       data: data,
       success: function () {
+        // Remove the row from the table using the booking ID as the identifier
+        var row = $("#bookingTable tbody").find(
+          'tr[data-booking-id="' + bookingId + '"]'
+        );
+        row.remove();
+
         // Handle the success response
         var alertDiv = createAlert(
           "success",
@@ -108,12 +114,6 @@ $(document).ready(function () {
         setTimeout(function () {
           alertDiv.alert("close");
         }, 3000);
-
-        // Remove the row from the table using the booking ID as the identifier
-        var row = $("#bookingTable tbody").find(
-          'tr[data-booking-id="' + bookingId + '"]'
-        );
-        row.remove();
       },
       error: function () {
         // Handle the error response
