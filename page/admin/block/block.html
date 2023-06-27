@@ -20,6 +20,7 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+    <script src="block.js"></script>
     <title>Manage Block</title>
   </head>
 
@@ -46,7 +47,7 @@
         </ul>
       </header>
     </div>
-
+    <div id="liveAlertPlaceholder"></div>
     <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded">
       <div class="row justify-content-center">
         <div class="col-sm-6">
@@ -55,7 +56,7 @@
               <h5>Manage Block</h5>
             </div>
             <div class="card-body">
-              <form id="searchForm">
+              <form id="addBlock">
                 <div class="mb-3">
                   <input
                     type="text"
@@ -75,7 +76,7 @@
       </div>
 
       <div class="container mt-5">
-        <table id="bookingTable" class="table"">
+        <table id="blockTable" class="table"">
           <thead>
             <tr>
               <th scope="col">#</th>

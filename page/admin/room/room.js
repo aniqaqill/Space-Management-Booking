@@ -1,41 +1,58 @@
 $(document).ready(function () {
-  // Fetch rooms data from the API
+  // Fetch blocks data from the API
   $.get("http://localhost:5000/blocks", function (data) {
-    // Populate the block table
-
-    var blockTableBody = $("#blockTable tbody");
-    blockTableBody.empty();
-
+    // Populate the block dropdown
+    var blockDropdown = $("#inputBlock");
+    blockDropdown.empty();
+    blockDropdown.append('<option value="">Select Block</option>');
     $.each(data, function (index, block) {
+      blockDropdown.append(
+        '<option value="' + block._id + '">' + block.name + "</option>"
+      );
+    });
+  });
+
+  // Fetch rooms data from the API into table
+  $.get("http://localhost:5000/rooms", function (data) {
+    // Populate the room table
+    var roomTableBody = $("#roomTable tbody");
+    roomTableBody.empty();
+    $.each(data, function (index, room) {
       var row = $("<tr>");
       row.append($("<th>").text(index + 1));
-      row.append($("<td>").text(block.name));
+      row.append($("<td>").text(room.name));
+      row.append($("<td>").text(room.type));
+      row.append($("<td>").text(room.block.name));
       row.append(
         $("<td>").append(
           $("<button>")
             .addClass("btn btn-danger btn-sm delete")
-            .attr("data-id", block._id)
+            .attr("data-id", room._id)
             .text("Delete")
         )
       );
-      blockTableBody.append(row);
+      roomTableBody.append(row);
     });
   });
 
-  // Handle add block button
-  $("#addBlock").click(function (event) {
+  // Handle add room button
+  $("#addRoom").click(function (event) {
     event.preventDefault();
-    var blockName = $("#inputBlock").val();
-    if (blockName) {
+    var roomName = $("#inputRoomName").val();
+    var roomType = $("#inputRoomType").val();
+    var block = $("#inputBlock").val();
+    if (roomName && roomType && block) {
       $.post(
-        "http://localhost:5000/blocks",
-        { name: blockName },
+        "http://localhost:5000/rooms",
+        { name: roomName, type: roomType, block: block },
         function (data) {
-          // append the new block to the block table
-          var blockTableBody = $("#blockTable tbody");
+          // append the new room to the room table
+          var roomTableBody = $("#roomTable tbody");
           var row = $("<tr>");
-          row.append($("<th>").text(blockTableBody.children().length + 1));
+          row.append($("<th>").text(roomTableBody.children().length + 1));
           row.append($("<td>").text(data.name));
+          row.append($("<td>").text(data.type));
+          row.append($("<td>").text(data.block.name));
           row.append(
             $("<td>").append(
               $("<button>")
@@ -44,14 +61,10 @@ $(document).ready(function () {
                 .text("Delete")
             )
           );
-
-          blockTableBody.append(row);
+          roomTableBody.append(row);
 
           // Handle the success response
-          var alertDiv = createAlert(
-            "success",
-            "Booking status updated successfully."
-          );
+          var alertDiv = createAlert("success", "Room added successfully.");
 
           $("#liveAlertPlaceholder").empty().append(alertDiv);
 
@@ -64,21 +77,19 @@ $(document).ready(function () {
     }
   });
 
-  // Handle delete block button
-  $("#blockTable").on("click", ".delete", function () {
+  // Handle delete room button
+  $("#roomTable").on("click", ".delete", function () {
     var deleteButton = $(this);
-    var blockId = $(this).attr("data-id");
-    var url = "http://localhost:5000/blocks/" + blockId;
-
+    var roomId = deleteButton.attr("data-id");
     $.ajax({
-      url: url,
+      url: "http://localhost:5000/rooms/" + roomId,
       type: "DELETE",
       success: function () {
-        // Remove the row from the table using the booking ID as the identifier
+        // Remove the row from the table using the room ID as the identifier
         deleteButton.closest("tr").remove();
 
         // Handle the success response
-        var alertDiv = createAlert("success", "Block deleted successfully.");
+        var alertDiv = createAlert("success", "Room deleted successfully.");
 
         $("#liveAlertPlaceholder").empty().append(alertDiv);
 
@@ -89,7 +100,7 @@ $(document).ready(function () {
       },
       error: function () {
         // Handle the error response
-        var alertDiv = createAlert("danger", "Failed to delete block.");
+        var alertDiv = createAlert("danger", "Failed to delete room.");
 
         $("#liveAlertPlaceholder").empty().append(alertDiv);
 
