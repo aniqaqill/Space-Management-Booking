@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Fetch blocks data from the API
-  $.get("http://localhost:5000/blocks", function (data) {
+  $.get("https://spacebooking.onrender.com/blocks", function (data) {
     // Populate the block dropdown
     var blockDropdown = $("#inputBlock");
     blockDropdown.empty();
@@ -13,7 +13,7 @@ $(document).ready(function () {
   });
 
   // Fetch rooms data from the API into table
-  $.get("http://localhost:5000/rooms", function (data) {
+  $.get("https://spacebooking.onrender.com/rooms", function (data) {
     // Populate the room table
     var roomTableBody = $("#roomTable tbody");
     roomTableBody.empty();
@@ -43,7 +43,7 @@ $(document).ready(function () {
     var block = $("#inputBlock").val();
     if (roomName && roomType && block) {
       $.post(
-        "http://localhost:5000/rooms",
+        "https://spacebooking.onrender.com/rooms",
         { name: roomName, type: roomType, block: block },
         function (data) {
           // append the new room to the room table
@@ -82,7 +82,7 @@ $(document).ready(function () {
     var deleteButton = $(this);
     var roomId = deleteButton.attr("data-id");
     $.ajax({
-      url: "http://localhost:5000/rooms/" + roomId,
+      url: "https://spacebooking.onrender.com/rooms/" + roomId,
       type: "DELETE",
       success: function () {
         // Remove the row from the table using the room ID as the identifier

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Fetch rooms data from the API
-  $.get("http://localhost:5000/blocks", function (data) {
+  $.get("https://spacebooking.onrender.com/blocks", function (data) {
     // Populate the block table
 
     var blockTableBody = $("#blockTable tbody");
@@ -28,7 +28,7 @@ $(document).ready(function () {
     var blockName = $("#inputBlock").val();
     if (blockName) {
       $.post(
-        "http://localhost:5000/blocks",
+        "https://spacebooking.onrender.com/blocks",
         { name: blockName },
         function (data) {
           // append the new block to the block table
@@ -68,7 +68,7 @@ $(document).ready(function () {
   $("#blockTable").on("click", ".delete", function () {
     var deleteButton = $(this);
     var blockId = $(this).attr("data-id");
-    var url = "http://localhost:5000/blocks/" + blockId;
+    var url = "https://spacebooking.onrender.com/blocks/" + blockId;
 
     $.ajax({
       url: url,

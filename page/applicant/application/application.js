@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Fetch rooms data from the API
-  $.get("http://localhost:5000/blocks", function (data) {
+  $.get("https://spacebooking.onrender.com/blocks", function (data) {
     // Populate the block dropdown
     var blockDropdown = $("#inputBlock");
     blockDropdown.empty();
@@ -28,7 +28,7 @@ $(document).ready(function () {
     if (selectedBlock && selectedRoomType) {
       // Fetch rooms data based on selected block and room type
       $.get(
-        "http://localhost:5000/rooms",
+        "https://spacebooking.onrender.com/rooms",
         { block: selectedBlock, type: selectedRoomType },
         function (rooms) {
           // Populate the room name dropdown
@@ -64,7 +64,7 @@ $(document).ready(function () {
     if (selectedBlock && selectedRoomType) {
       // Fetch rooms data based on selected block and room type
       $.get(
-        "http://localhost:5000/rooms",
+        "https://spacebooking.onrender.com/rooms",
         { block: selectedBlock, type: selectedRoomType },
         function (rooms) {
           // Populate the room name dropdown
@@ -103,7 +103,7 @@ $(document).ready(function () {
     if (selectedBlock && selectedRoomType && selectedRoomName && selectedDate) {
       // Fetch bookings data based on selected block, room type, room name, and date
       $.get(
-        "http://localhost:5000/applications/available",
+        "https://spacebooking.onrender.com/applications/available",
         {
           block: selectedBlock,
           room: selectedRoomName,
@@ -141,7 +141,7 @@ $(document).ready(function () {
     ) {
       // Fetch bookings data based on selected block, room type, room name, and date
       $.get(
-        "http://localhost:5000/applications/available/period",
+        "https://spacebooking.onrender.com/applications/available/period",
         {
           block: selectedBlock,
           room: selectedRoomName,
@@ -188,7 +188,7 @@ $(document).ready(function () {
     ) {
       // Fetch bookings data based on selected block, room type, room name, and date
       $.post(
-        "http://localhost:5000/applications",
+        "https://spacebooking.onrender.com/applications",
         {
           block: selectedBlock,
           room: selectedRoomName,

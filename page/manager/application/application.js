@@ -2,7 +2,7 @@ $(document).ready(function () {
   var bookingTable = $("#bookingTable");
   var noBookingMessage = $("#noBookingMessage");
 
-  $.get("http://localhost:5000/applications/", function (data) {
+  $.get("https://spacebooking.onrender.com/applications/", function (data) {
     if (data.length > 0) {
       populateTable(data);
     } else {
@@ -64,7 +64,7 @@ $(document).ready(function () {
   }
 
   function updateBookingStatus(bookingId, status) {
-    var url = "http://localhost:5000/applications/" + bookingId;
+    var url = "https://spacebooking.onrender.com/applications/" + bookingId;
     var data = { status: status };
 
     $.ajax({
@@ -88,7 +88,7 @@ $(document).ready(function () {
   }
 
   function updateBookingStatus(bookingId, status) {
-    var url = "http://localhost:5000/applications/" + bookingId;
+    var url = "https://spacebooking.onrender.com/applications/" + bookingId;
     var data = { status: status };
 
     $.ajax({

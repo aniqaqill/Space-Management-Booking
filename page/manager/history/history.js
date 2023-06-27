@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // Fetch rooms data from the API
-  $.get("http://localhost:5000/blocks", function (data) {
+  $.get("https://spacebooking.onrender.com/blocks", function (data) {
     // Populate the block dropdown
     var blockDropdown = $("#inputBlock");
     blockDropdown.empty();
@@ -20,7 +20,7 @@ $(document).ready(function () {
     if (selectedBlock && selectedRoomType) {
       // Fetch rooms data based on selected block and room type
       $.get(
-        "http://localhost:5000/rooms",
+        "https://spacebooking.onrender.com/rooms",
         { block: selectedBlock, type: selectedRoomType },
         function (rooms) {
           // Populate the room name dropdown
@@ -48,7 +48,7 @@ $(document).ready(function () {
     if (selectedBlock && selectedRoomType) {
       // Fetch rooms data based on selected block and room type
       $.get(
-        "http://localhost:5000/rooms",
+        "https://spacebooking.onrender.com/rooms",
         { block: selectedBlock, type: selectedRoomType },
         function (rooms) {
           // Populate the room name dropdown
@@ -78,7 +78,7 @@ $(document).ready(function () {
     if (selectedBlock && selectedRoomType && selectedRoomName) {
       // Fetch application data based on selected block, room type, and room name
       $.get(
-        "http://localhost:5000/applications/history",
+        "https://spacebooking.onrender.com/applications/history",
         {
           block: selectedBlock,
           type: selectedRoomType,

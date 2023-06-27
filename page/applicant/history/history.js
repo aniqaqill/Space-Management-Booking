@@ -7,7 +7,7 @@ $(document).ready(function () {
     if (inputPhone) {
       // Fetch application data based on selected block, room type, and room name
       $.get(
-        "http://localhost:5000/applications/history/" + inputPhone,
+        "https://spacebooking.onrender.com/applications/history/" + inputPhone,
         function (applications) {
           const { pastApplications, upcomingApplications } = applications;
 
