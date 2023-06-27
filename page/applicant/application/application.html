@@ -47,15 +47,81 @@
         </ul>
       </header>
     </div>
+
     <div id="liveAlertPlaceholder"></div>
-    <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded">
-      <h2 class="text-center">Room Booking Application</h2>
-
-      <div class="container mt-5">
-
-
-       
-      </div>
+      <div class="container mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="row justify-content-center">
+          <div class="col-sm-6">
+            <div class="card border-0 bg-body">
+              <div class="card-header text-center border-0 bg-body">
+                <h5>Search Booking History</h5>
+              </div>
+              <div class="card-body">
+                <form id="searchForm">
+                    <div class="mb-3">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="inputName"
+                        placeholder="Enter Name"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <input
+                        type="phone"
+                        class="form-control"
+                        id="inputPhone"
+                        placeholder="Enter Phone Number"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-control" id="inputBlock">
+                        <option value="">Select Block</option>
+                        </select>
+                    </div>
+                  <div class="mb-3">
+                    <select class="form-control" id="inputRoomType">
+                      <option value="">Select Room Type</option>
+                      <option value="Lecture Room">Lecture Room</option>
+                      <option value="Meeting Room">Meeting Room</option>
+                      <option value="Lab Room">Lab Room</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-control" id="inputRoomName">
+                      <option value="">Select Room Name</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="inputDate"
+                      placeholder="Enter Date"
+                    />
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-control" id="inputTime">
+                        <option value="">Select Time</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-control" id="inputDuration">
+                        <option value="">Select Duration</option>
+                        <option value="1">1 Hour</option>
+                        <option value="2">2 Hours</option>
+                        <option value="3">3 Hours</option>
+                        <option value="4">4 Hours</option>
+                        </select>
+                    </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </body>
 </html>
